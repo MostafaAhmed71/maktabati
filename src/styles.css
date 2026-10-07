@@ -220,3 +220,7 @@ body{background:
  .hero{min-height:190px!important}.heroText{padding:16px 17px!important}.heroBrand{margin-bottom:5px}.heroBrand .brandSvg{width:44px!important;height:36px!important}.heroBrand h1{font-size:23px!important}.heroBrand strong{font-size:8px!important}.heroText h2{font-size:17px!important;margin:5px 0!important}.heroText p{display:none}.heroActions{margin-top:9px!important}.heroActions button{height:36px!important;font-size:10px!important;padding:0 10px!important}.heroArt{height:78px!important}.heroDesk{transform:scale(.38)!important;transform-origin:center bottom!important}
  .skeletonShell{display:block}.skeletonShell aside{display:none}.skeletonShell main{padding:14px}.skHero{height:190px}.skGrid{grid-template-columns:1fr 1fr}.skGrid i{height:150px}
 }
+
+
+.githubTopics{display:flex;gap:6px;flex-wrap:wrap}.githubTopics span{font-size:9px;background:#e9f4f1;color:#0f766e;border:1px solid #d4e8e3;border-radius:999px;padding:5px 8px}
+.sideBottom button.active{background:#ffffff10;color:#fff}
