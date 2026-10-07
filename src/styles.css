@@ -197,3 +197,5 @@ body{background:
 @media(max-width:720px){
  .installBtn{display:none}.smartStrip{display:flex;overflow-x:auto;gap:9px;margin:-7px -2px 18px;padding:2px;scrollbar-width:none}.smartStrip::-webkit-scrollbar{display:none}.smartStrip article{min-width:82%;border-radius:16px}.projectToolbar{display:grid;grid-template-columns:1fr 1fr;margin-bottom:12px}.projectToolbar .projectSearch{grid-column:1/-1}.projectToolbar .syncBtn{grid-column:1/-1}.projectToolbar select,.projectToolbar>button,.projectSearch{height:40px;font-size:11px}.commandBack{padding-top:9vh}.commandPalette{width:94vw;border-radius:19px}.commandSearch{height:58px;padding:0 13px}.commandSearch input{font-size:13px}.hubShowcaseArt{height:160px}.hubShowcase .hubHead{align-items:flex-start;flex-wrap:wrap}.editProjectBtn{margin-right:auto}
 }
+
+.successToast{background:#e8f5ef;color:#176b51;border:1px solid #bfe0d2;padding:10px 12px;border-radius:11px;margin-bottom:12px;font-weight:700;font-size:12px}
