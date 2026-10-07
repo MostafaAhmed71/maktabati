@@ -39,6 +39,7 @@ export const library={
   return {projects:projects.data||[],items:items.data||[],tasks:tasks.data||[],tags:tags.data||[]}
  },
  syncGithub:(username='MostafaAhmed71',github_token?:string)=>supabase.functions.invoke('github-sync',{body:{username,...(github_token?{github_token}:{})}}),
+ syncProjectPreviews:()=>supabase.functions.invoke('sync-project-previews',{body:{}}),
  touchProject:(id:string)=>supabase.from('projects').update({last_accessed_at:new Date().toISOString()}).eq('id',id),
  activities:(limit=20)=>supabase.from('activity_log').select('*').order('created_at',{ascending:false}).limit(limit),
  logActivity:(action:string,entity_type:string,entity_id:string|undefined,title:string,metadata:Record<string,unknown>={})=>supabase.from('activity_log').insert({action,entity_type,entity_id:entity_id||null,title,metadata}),
