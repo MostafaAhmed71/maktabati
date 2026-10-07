@@ -1,0 +1,20 @@
+{
+  "name": "مكتبتي | Maktabati",
+  "short_name": "مكتبتي",
+  "lang": "ar",
+  "dir": "rtl",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#f4eee2",
+  "theme_color": "#073b3d",
+  "description": "مركزك الرقمي للمشاريع والملفات والملاحظات والبرومبتات والمهام.",
+  "icons": [
+    {
+      "src": "/maktabati-icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
