@@ -21,5 +21,17 @@ export const library={
  createTask:(data:{title:string;description?:string;project_id?:string;priority?:string;due_at?:string})=>supabase.from('tasks').insert(data).select().single(),
  updateTask:(id:string,data:Record<string,unknown>)=>supabase.from('tasks').update({...data,updated_at:new Date().toISOString()}).eq('id',id).select().single(),
  deleteTask:(id:string)=>supabase.from('tasks').delete().eq('id',id),
- search:(term:string)=>supabase.from('items').select('*').is('deleted_at',null).or(`title.ilike.%${term}%,content.ilike.%${term}%`).order('updated_at',{ascending:false})
+ search:(term:string)=>supabase.from('items').select('*').is('deleted_at',null).or(`title.ilike.%${term}%,content.ilike.%${term}%`).order('updated_at',{ascending:false}),
+ globalSearch:async(term:string)=>{
+  const q=term.trim(); if(!q)return {projects:[],items:[],tasks:[],tags:[]};
+  const [projects,items,tasks,tags]=await Promise.all([
+   supabase.from('projects').select('*').or(`name.ilike.%${q}%,description.ilike.%${q}%`).order('updated_at',{ascending:false}).limit(12),
+   supabase.from('items').select('*').is('deleted_at',null).or(`title.ilike.%${q}%,content.ilike.%${q}%`).order('updated_at',{ascending:false}).limit(12),
+   supabase.from('tasks').select('*').or(`title.ilike.%${q}%,description.ilike.%${q}%`).order('updated_at',{ascending:false}).limit(12),
+   supabase.from('tags').select('*').ilike('name',`%${q}%`).order('name').limit(12)
+  ]);
+  return {projects:projects.data||[],items:items.data||[],tasks:tasks.data||[],tags:tags.data||[]}
+ },
+ syncGithub:(username='MostafaAhmed71',github_token?:string)=>supabase.functions.invoke('github-sync',{body:{username,...(github_token?{github_token}:{})}}),
+ touchProject:(id:string)=>supabase.from('projects').update({last_accessed_at:new Date().toISOString()}).eq('id',id)
 }
