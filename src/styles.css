@@ -27,3 +27,16 @@ body{background:var(--petrol-deep);color:var(--ivory)}.app{background:radial-gra
 /* Inner product surfaces aligned with the approved identity */
 .libraryPage{background:#fffaf0;color:#073b3d;border-radius:22px;padding:24px!important;margin-top:8px;box-shadow:0 18px 55px #001b1d35}.libraryPage .eyebrow{color:#f97316}.libraryPage .pageHead{border-color:#eadfcb}.libraryPage .pageHead p{color:#72847f}.libraryPage .resourceCard,.libraryPage .resourceList>article{background:#fffdf7!important;border-color:#eadfcb!important;color:#073b3d!important}.libraryPage .resourceCard:hover{border-color:#f97316!important;box-shadow:0 12px 28px #073b3d14}.libraryPage .resourceIcon{background:#ffede0;color:#f97316}.libraryPage .resourceInfo small,.libraryPage .resourceCard p{color:#7e8e89}.libraryPage .resourceCard>svg{background:#e2f1ec;color:#0b807c}.libraryPage .resourceList button{background:#fff7e6;color:#87512d;border-color:#ead0b5}.libraryPage .emptyState{background:#fffdf7;color:#84918d;border-color:#dbcdb7}.libraryPage .taskBoard>section{background:#fffdf7;border-color:#eadfcb}.libraryPage .task{background:#fffaf0;border-color:#eadfcb;color:#073b3d}.libraryPage .tagGrid article{background:#fffdf7;border-color:#eadfcb}.projectModal{background:#03292bdc}.projectHub{background:#fffaf0!important;color:#073b3d!important;border-color:#eadfcb!important}.projectHub .hubHead,.projectHub .hubTasks,.projectHub .hubTabs{border-color:#eadfcb}.projectHub .hubHead p,.projectHub .hubStats span,.projectHub .hubItem small,.projectHub .task small{color:#758782}.projectHub .hubLinks a,.projectHub .hubLinks span,.projectHub .hubStats article,.projectHub .hubItem,.projectHub .task{background:#fffdf7!important;color:#073b3d!important;border-color:#eadfcb!important}.projectHub .hubTabs button{background:#fffdf7;color:#687b76;border-color:#e4d6c0}.projectHub .hubTabs button.active{background:#f97316;color:#fff7e6;border-color:#f97316}.projectHub .resourceIcon{background:#ffede0;color:#f97316}.projectHub .hubItemActions button,.projectHub .hubItemActions a{background:#fff7e6;color:#a95319;border-color:#edcfb6}.projectHub .hubEmpty h3{color:#073b3d}.projectHub .closeHub{background:#fff7e6;color:#073b3d;border-color:#dfcfb8}.projectHub .hubIcon{box-shadow:0 12px 25px #f9731633}.utilityComposer{max-width:600px}
 @media(max-width:720px){.libraryPage{margin:5px -3px 0;padding:16px!important;border-radius:18px}.projectHub{background:#fffaf0!important}.libraryPage .pageHead{gap:10px}.libraryPage .pageHead .primary{font-size:11px}.projectHub .hubHead h2{font-size:23px}}
+
+html{width:100%;overflow-x:hidden;-webkit-text-size-adjust:100%}body,#root{width:100%;min-width:0;margin:0;overflow-x:hidden}
+@media(max-width:720px){
+ .app{width:100%!important;min-width:0!important;grid-template-columns:1fr!important}
+ .sidebar{display:none!important;width:0!important}
+ .content{max-width:none!important;min-width:0!important;margin:0!important}
+ .topbar{display:flex!important;width:auto!important}
+ .topbar .search{min-width:0!important}
+ .topbar .search input{min-width:0!important;width:100%!important}
+ .hero{width:100%!important;max-width:none!important}
+ .stats,.quick,.dashboardLower,.upcoming,.libraryPage{width:100%!important;min-width:0!important}
+ .mobileNav{display:grid!important}
+}
