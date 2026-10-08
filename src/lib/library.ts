@@ -38,6 +38,7 @@ export const library={
   ]);
   return {projects:projects.data||[],items:items.data||[],tasks:tasks.data||[],tags:tags.data||[]}
  },
+ smartSearch:async(term:string)=>{const stop=new Set(['فين','اين','أين','عايز','اريد','أريد','اللي','الى','إلى','عن','في','من','على','ايه','إيه','ما','هو','هي','لي','لما','آخر','اخر','حالة','ملخص','مشروع','ملف','برومبت','مهمة']);const words=term.toLowerCase().replace(/[؟?،,.!]/g,' ').split(/\s+/).filter(w=>w.length>2&&!stop.has(w)).slice(0,5);const queries=[term,...words];const results=await Promise.all(queries.map(q=>library.globalSearch(q)));const uniq=(arr:any[])=>Array.from(new Map(arr.map(x=>[x.id,x])).values());return {projects:uniq(results.flatMap(r=>r.projects)),items:uniq(results.flatMap(r=>r.items)),tasks:uniq(results.flatMap(r=>r.tasks)),tags:uniq(results.flatMap(r=>r.tags))}},
  syncGithub:(username='MostafaAhmed71',github_token?:string)=>supabase.functions.invoke('github-sync',{body:{username,...(github_token?{github_token}:{})}}),
  syncProjectPreviews:()=>supabase.functions.invoke('sync-project-previews',{body:{}}),
  touchProject:(id:string)=>supabase.from('projects').update({last_accessed_at:new Date().toISOString()}).eq('id',id),
